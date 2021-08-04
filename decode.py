@@ -22,10 +22,6 @@ def encode_morse(text):
     return result
 
 
-def encode_bits(text):
-    return
-
-
 def decode_bits(bits):
     p = 0
     bits_list = []
@@ -76,7 +72,7 @@ def options():
 
     try:
         decode_or_encode = input("Decode or Encode?: ")
-        # decore or encode
+        # decode or encode
         if (decode_or_encode not in decode_options
                 and decode_or_encode not in encode_options):
             print("Please select a valid option")
@@ -100,23 +96,13 @@ def options():
 
         # if encode
         if decode_or_encode in encode_options:
-            morse_or_bits = input("Are we encoding Morse or Bits?\n")
-
-            if (morse_or_bits not in morse_options
-                    and morse_or_bits not in bits_options):
-                print("Please select a valid option")
-
-            # if morse
-            if morse_or_bits in morse_options:
+            # enter text to encode
                 text = input("Please enter text to encode to morse:\n")
                 print("Input:   ", text)
                 print("Encoded:   \n", encode_morse(text))
+        else:
+                print("Please select a valid option")
 
-            # if bits
-            if morse_or_bits in morse_options:
-                text = input("Please enter text to encode to bits:\n")
-                print("Input:   \n", text)
-                print("Encoded:   \n", encode_bits(text))
     except Exception as e:
         print(e)
 
