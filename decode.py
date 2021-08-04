@@ -17,7 +17,7 @@ def encode_morse(text):
     result = ""
     for word in text_list:
         for letter in word:
-            print(str(ENG_2_MORSE.get(letter)))
+            print((ENG_2_MORSE.get(letter.upper())))
 
     return result
 
